@@ -80,6 +80,7 @@
 
   ]d          Next diagnostic
   [d          Prev diagnostic
+  <leader>cd  Line diagnostics (cursor jumps in)
   <leader>sd  Document diagnostics
   <leader>sD  Workspace diagnostics
 

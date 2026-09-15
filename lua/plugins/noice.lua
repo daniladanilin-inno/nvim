@@ -1,13 +1,14 @@
--- noice overrides LSP hover/signature help, and its `hover` view hardcodes
--- border.style = "none" -- so vim.o.winborder never reaches it. This preset
--- switches the view to a rounded border, drawn with NoicePopupBorder, which
--- links to FloatBorder (magenta in the pulsar theme).
+-- noice renders LSP hover as a nui popup that is mounted with enter = false and
+-- exposes no way to focus it, so `K` could never be jumped into. Handing hover
+-- back to the builtin gives a real, focusable float -- bordered by
+-- vim.o.winborder (config/options.lua) and colored by FloatBorder.
 return {
   {
     "folke/noice.nvim",
     opts = {
-      presets = {
-        lsp_doc_border = true,
+      lsp = {
+        hover = { enabled = false },
+        signature = { enabled = false },
       },
     },
   },
