@@ -5,3 +5,4 @@
 -- Global border for native floats (LSP hover/signature help, diagnostics, etc).
 -- Colored by FloatBorder, which the pulsar theme sets to magenta.
 vim.o.winborder = "rounded"
+vim.filetype.add({ extension = { tf = "terraform" } })
