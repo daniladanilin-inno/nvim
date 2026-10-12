@@ -37,3 +37,8 @@ vim.keymap.set("n", "]e", diagnostic_goto(true, "ERROR"), { desc = "Next Error" 
 vim.keymap.set("n", "[e", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
 vim.keymap.set("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
 vim.keymap.set("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
+
+-- x deletes into the black hole register, so single-char deletes no longer
+-- clobber the unnamed register and p still pastes whatever you last yanked.
+-- A count still works: 3x sends 3"_x.
+vim.keymap.set("n", "x", '"_x', { desc = "Delete char (no yank)" })
